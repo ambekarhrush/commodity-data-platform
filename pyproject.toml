@@ -1,0 +1,44 @@
+[build-system]
+requires = ["hatchling==1.27.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "commodity-data-platform"
+version = "0.2.0"
+description = "Versioned commodity observations, quality reports and futures research primitives"
+requires-python = ">=3.11"
+dependencies = [
+    "duckdb>=1.4,<2",
+    "pandas>=2.3,<3",
+    "pyarrow>=21,<24",
+    "httpx>=0.28,<0.29",
+    "openpyxl>=3.1,<4",
+    "numpy>=2,<3",
+    "xlrd>=2,<3",
+    "beautifulsoup4>=4.13,<5",
+    "filelock>=3.19,<4",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10", "ruff>=0.12,<1", "mypy>=1.17,<2", "pandas-stubs>=2.3,<3"]
+reports = [
+    "pymupdf>=1.26,<2",
+    "reportlab>=4,<5",
+]
+
+[project.scripts]
+commodity-data = "commodity_data.cli:main"
+
+[tool.ruff]
+line-length = 100
+
+[tool.mypy]
+python_version = "3.11"
+ignore_missing_imports = true
+check_untyped_defs = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/commodity_data"]

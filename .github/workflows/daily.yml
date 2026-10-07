@@ -1,0 +1,48 @@
+name: daily-ingestion
+on:
+  schedule:
+    - cron: '25 18 * * *'
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: commodity-data-ingestion
+  cancel-in-progress: false
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          version: '0.12.10'
+          python-version: '3.11'
+      - run: uv sync --frozen
+      - name: Restore last archive, including prior observation vintages
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          id=$(gh api "repos/$GITHUB_REPOSITORY/actions/artifacts?name=commodity-history&per_page=100" --jq '[.artifacts[] | select(.expired == false)] | sort_by(.created_at) | reverse | .[0].id // empty')
+          if [ -n "$id" ]; then
+            gh api "repos/$GITHUB_REPOSITORY/actions/artifacts/$id/zip" > /tmp/history.zip
+            mkdir -p data
+            unzip -q /tmp/history.zip -d data
+          fi
+      - name: Refresh public sources and available authenticated sources
+        env:
+          AGSI_API_KEY: ${{ secrets.AGSI_API_KEY }}
+        run: uv run commodity-data refresh
+      - name: Export catalogue
+        if: ${{ !cancelled() }}
+        run: uv run commodity-data export-catalog data/catalog.html
+      - name: Preserve history and reports even when checks fail
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: commodity-history
+          path: data/
+          retention-days: 90
+          if-no-files-found: error
