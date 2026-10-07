@@ -6,8 +6,8 @@ and materializes 14 derived series with input lineage. Local verification on
 7 October 2026: **262,591 current observations, 13,147 series**, including derived data.
 
 **The full original Project 1 is not complete.** A current dated WTI contract and its
-first-notice/last-trade metadata are now available, but an official settlement feed and
-verified exchange calendar are still needed; GitHub scheduling/off-device backups are inactive.
+first-notice/last-trade metadata are now available, but an official settlement feed,
+verified exchange calendar and durable off-device backup are still needed.
 See [completion gates](docs/COMPLETION.md). No synthetic data are mixed into the
 live catalogue. This is a local library and CLI, with a searchable HTML export.
 
@@ -196,11 +196,13 @@ is still on the same device; copy it to durable storage you control.
 `.github/workflows/ci.yml` runs tests/lint/types. `daily.yml` requests a daily 18:25
 UTC refresh, restores the latest unexpired cumulative artifact, refreshes sources,
 exports the catalogue and uploads the archive even when a refresh fails.
-**The workflows are inactive until this project is pushed to a GitHub repository.**
-No remote exists and no repository has been published. Schedules are best effort.
-Artifacts expire after 90 days: a continuing daily chain carries older vintages
-forward, but a long outage can lose the archive. Durable off-device backup and a
-verified hosted run are still required for completion.
+The repository is public at `ambekarhrush/commodity-data-platform`; GitHub Actions
+can now run CI and the scheduled workflow. Configure `AGSI_API_KEY` as a repository
+secret before enabling authenticated AGSI refreshes, then verify one manual run and
+its uploaded artifact. Schedules are best effort. Artifacts expire after 90 days: a
+continuing daily chain carries older vintages forward, but a long outage can lose the
+archive. Durable off-device backup and a verified hosted run are still required for
+completion.
 
 ## Verification and project note
 

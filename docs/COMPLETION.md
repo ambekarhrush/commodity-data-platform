@@ -67,13 +67,14 @@ exchange calendar.
 
 ## 4. Hosted operations and durable backup
 
-Need a target GitHub account/repository. No repository has been created or pushed,
-and the machine has no gh executable. The workflow is ready for review locally.
+The public repository now exists at `ambekarhrush/commodity-data-platform`, and the
+initial local commit has been pushed to `main`. The machine does not need `gh` for
+normal Git push/pull operations.
 
-Activation sequence: create/push repository, configure AGSI secret, manually run
-CI and refresh, verify artifact restoration, arrange off-device archival, simulate
-a failure and verify notification, then verify a scheduled run. Keep raw vendor
-data out of Git; review access to artifacts before sharing the repository.
+Activation sequence: configure AGSI secret, manually run CI and refresh, verify
+artifact restoration, arrange off-device archival, simulate a failure and verify
+notification, then verify a scheduled run. Keep raw vendor data out of Git; review
+access to artifacts before sharing the repository.
 
 Local ZIP backups work, but they do not protect against loss of this computer.
 GitHub artifacts expire, so they are not sufficient as the only year-long archive.
