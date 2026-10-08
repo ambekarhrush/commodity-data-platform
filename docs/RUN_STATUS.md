@@ -2,7 +2,7 @@
 
 This file is updated by the daily GitHub Actions refresh. It contains no raw market data or credentials.
 
-Last successful refresh: `2026-10-08T12:49:21.309334+00:00`
+Last successful refresh: `2026-10-08T12:49:43.390201+00:00`
 
 | Source | Status | Rows | New review alerts |
 | --- | --- | ---: | ---: |
@@ -18,4 +18,4 @@ Last successful refresh: `2026-10-08T12:49:21.309334+00:00`
 ## Remaining completion gates
 
 - Official exchange settlement feed still required; live dated WTI closes and FND/LTD metadata are available
-- GitHub remote, scheduled execution and off-device backup not activated
+- Scheduled GitHub execution and off-device backup not yet verified

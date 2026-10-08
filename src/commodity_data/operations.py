@@ -55,7 +55,7 @@ def health(root: Path) -> dict:
                 if "yahoo-futures" in good
                 else ["Live individual-contract prices and exchange calendar still required"]
             ),
-            "GitHub remote, scheduled execution and off-device backup not activated",
+            "Scheduled GitHub execution and off-device backup not yet verified",
         ],
     }
 
