@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="440" viewBox="0 0 1280 440" role="img" aria-labelledby="title desc">
+<title id="title">Commodity Data Platform</title><desc id="desc">Traceable data for commodity research. Python, DuckDB, Parquet. Source files flow through validation, versioned storage and research outputs.</desc>
+<rect width="1280" height="440" fill="#102d32" rx="16"/>
+<path d="M880 0V440M980 0V440M1080 0V440M1180 0V440M840 80H1280M840 160H1280M840 240H1280M840 320H1280" stroke="#224449" stroke-width="1"/>
+<rect x="56" y="48" width="28" height="4" fill="#d2b77d"/>
+<g font-family="Arial, Helvetica, sans-serif">
+<text x="100" y="56" font-size="13" letter-spacing="3" fill="#d2b77d">COMMODITY RESEARCH / 01</text>
+<text x="56" y="144" font-size="58" font-weight="700" letter-spacing="-2" fill="#f3f2eb">Commodity Data</text>
+<text x="56" y="208" font-size="58" font-weight="700" letter-spacing="-2" fill="#f3f2eb">Platform</text>
+<text x="58" y="254" font-size="23" fill="#b5c8c6">Traceable data for commodity research.</text>
+<text x="58" y="294" font-size="13" letter-spacing="2" fill="#d2b77d">PYTHON   /   DUCKDB   /   PARQUET</text>
+<rect x="890" y="85" width="325" height="188" rx="8" fill="#16383d" stroke="#36575b"/>
+<text x="915" y="119" font-size="12" letter-spacing="2" fill="#b5c8c6">DESIGNED FOR REPRODUCIBILITY</text>
+<text x="915" y="159" font-size="20" fill="#f3f2eb">Preserve the source.</text>
+<text x="915" y="197" font-size="20" fill="#f3f2eb">Track the revision.</text>
+<text x="915" y="235" font-size="20" fill="#f3f2eb">Explain the result.</text>
+<path d="M56 337H1224" stroke="#36575b"/>
+<text x="56" y="385" font-size="16" fill="#f3f2eb">01  Source files</text>
+<text x="305" y="385" font-size="16" fill="#f3f2eb">02  Validation</text>
+<text x="575" y="385" font-size="16" fill="#f3f2eb">03  Versioned storage</text>
+<text x="920" y="385" font-size="16" fill="#f3f2eb">04  Research outputs</text>
+<path d="M242 379H273m-7-5 7 5-7 5M511 379H543m-7-5 7 5-7 5M851 379H884m-7-5 7 5-7 5" fill="none" stroke="#d2b77d" stroke-width="1.5"/>
+</g></svg>

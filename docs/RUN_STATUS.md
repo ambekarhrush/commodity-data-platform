@@ -1,8 +1,11 @@
-# Automated refresh status
+# Source status
 
-This file is updated by the daily GitHub Actions refresh. It contains no raw market data or credentials.
+This initial report was generated locally. No hosted daily-ingestion run has been verified.
+Successful hosted refreshes will replace this report automatically.
 
-Last successful refresh: `2026-10-08T12:49:43.390201+00:00`
+[Workflow history](https://github.com/ambekarhrush/commodity-data-platform/actions/workflows/daily.yml) · [Project overview](../README.md)
+
+Local health report generated: `2026-10-08T12:49:43.390201+00:00`
 
 | Source | Status | Rows | New review alerts |
 | --- | --- | ---: | ---: |

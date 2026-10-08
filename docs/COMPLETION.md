@@ -47,8 +47,7 @@ Source checked: https://www.usda.gov/sites/default/files/documents/oce-wasde-rep
 EIA's rank series stop after 5 April 2024. The platform now imports the current
 dated NYMEX WTI contract available from Yahoo Finance, paired with versioned,
 open Futures Clock first-notice/last-trade metadata. The initial import is
-`NYMEX:CLX6`, with 192 daily closes from 2 January to 7 October 2026. This is
-enough to exercise contract identity and a first-notice-constrained roll rule.
+`NYMEX:CLX6`, with 192 daily closes from 2 January to 7 October 2026. This verifies contract identity; one contract is insufficient to validate a roll transition.
 
 The price is deliberately labelled `close_not_official_settlement`: Yahoo's daily
 close is not CME's official settlement. Futures Clock is an open, reviewed

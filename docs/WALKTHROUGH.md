@@ -1,4 +1,8 @@
-# Understand the first build
+# Research walkthrough
+
+[Overview](../README.md) · [Engineering reference](REFERENCE.md)
+
+Follow a source observation through storage, validation and a research query.
 
 ## 1. Follow one observation
 
@@ -62,7 +66,7 @@ energy coverage and source-specific monitoring, followed by real futures data.
 
 ## 6. Explore release 0.2
 
-Run `commodity-data refresh` for all four public sources plus derived series.
+Run `uv run commodity-data refresh` for configured network sources plus derived series.
 `commodity-data health` distinguishes connected sources from the remaining gates.
 `commodity-data export-catalog output/catalog.html` creates a searchable local page.
 Try `commodity-data query "SELECT * FROM catalog WHERE source = 'derived'"`.
@@ -71,5 +75,5 @@ Read `docs/COMPLETION.md` before treating the platform as complete. EIA public X
 files remove the API-key dependency for the default energy adapter. AGSI has now
 been live-verified. USDA WASDE works from original browser-downloaded CSVs; import
 future releases with `commodity-data ingest usda-wasde --files ...`. Current
-contract-level futures history remains unresolved. The example roll demonstration
+official settlement history and real-roll validation remain unresolved. The example roll demonstration
 is still synthetic.

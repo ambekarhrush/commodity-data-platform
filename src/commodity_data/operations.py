@@ -80,34 +80,49 @@ def export_catalog(root: Path, output: Path) -> None:
         """<!doctype html><html lang="en"><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Commodity Data Catalogue</title><style>
-body{font:15px/1.5 system-ui,sans-serif;margin:0;background:#f4f6f8;color:#172b3a}
-main{max-width:1400px;margin:auto;padding:40px}h1{font-size:38px;margin:4px 0}
-.eyebrow{color:#386e76;font-weight:700;letter-spacing:2px;font-size:12px}
-.cards{display:flex;gap:12px;flex-wrap:wrap;margin:24px 0}article{background:white;
-border:1px solid #dce4e9;border-radius:10px;padding:16px;min-width:140px}
-article p{margin:5px 0}small{color:#526674}input{padding:12px;width:340px;max-width:85%;
-border:1px solid #b4c5cd;border-radius:6px;margin:15px 0}table{border-collapse:collapse;
-width:100%;background:white;font-size:13px}th,td{text-align:left;padding:10px;
-border-bottom:1px solid #e6ecef}th{background:#173847;color:white;position:sticky;top:0}
-.scroll{overflow:auto}aside{border-left:4px solid #c39644;padding:8px 18px;background:#fff8e9}
-</style><main><div class="eyebrow">PROJECT 01 / LOCAL RESEARCH DATA</div>
-<h1>Commodity data catalogue</h1><p>"""
-        + html.escape(report["generated_at"])
+*{box-sizing:border-box}body{font:15px/1.6 system-ui,sans-serif;margin:0;
+background:#f5f4ef;color:#17363a}main{max-width:1440px;margin:auto;padding:56px 40px}
+.masthead{background:#102d32;color:#f3f2eb;padding:44px;border-radius:12px}
+h1{font-size:clamp(32px,5vw,58px);line-height:1.08;letter-spacing:-2px;margin:22px 0}
+.eyebrow{color:#d2b77d;font-weight:650;letter-spacing:2px;font-size:11px}
+.masthead p{max-width:660px;color:#b5c8c6}.stamp{font-size:12px;overflow-wrap:anywhere}
+.cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:24px 0}
+article{background:#fff;border:1px solid #dce3df;border-radius:8px;padding:20px}
+article b{font-size:13px}article p{margin:10px 0 4px;color:#245b50;font-weight:650}
+small{color:#5b6c6c;font-size:12px}label{display:block;font-weight:650;margin-top:32px}
+input{font:inherit;padding:13px 16px;width:460px;max-width:100%;border:1px solid #b9c9c4;
+border-radius:6px;margin:10px 0 20px;background:#fff;color:#17363a}
+input:focus-visible{outline:3px solid #c4a562;outline-offset:3px}
+table{border-collapse:collapse;width:100%;background:white;font-size:13px}
+th,td{text-align:left;padding:14px 16px;border-bottom:1px solid #e6ece8}
+th{background:#17363a;color:white;position:sticky;top:0;font-weight:550;white-space:nowrap}
+td:nth-child(2){min-width:200px;max-width:460px;overflow-wrap:anywhere}
+tbody tr:hover{background:#f0f5f2}.scroll{overflow:auto;max-height:650px;
+border:1px solid #dce3df;border-radius:8px}aside{border-left:3px solid #b49456;
+padding:16px 24px;background:#ece9df;font-size:13px}aside ul{margin-bottom:0}
+.footnote{font-size:12px;color:#5b6c6c;max-width:860px;margin-top:24px}
+@media(max-width:760px){main{padding:20px 16px}.masthead{padding:28px 24px}
+.cards{grid-template-columns:repeat(2,minmax(0,1fr))}h1{letter-spacing:-1px}}
+@media(max-width:400px){.cards{grid-template-columns:1fr}}
+</style><main><header class="masthead"><div class="eyebrow">COMMODITY RESEARCH / 01</div>
+<h1>Explore the data.</h1><p>Source coverage, observation history and quality signals
+for commodity research.</p><p class="stamp">Snapshot generated: """
+        + datetime.fromisoformat(report["generated_at"]).strftime("%d %b %Y · %H:%M UTC")
         + """
- · Static snapshot. Regenerate after refreshing data.</p><div class="cards">"""
+ · Static export; regenerate after refreshing.</p></header><div class="cards">"""
         + cards
         + """
-</div><aside><b>Completion gates still open</b><ul>"""
+</div><aside><b>Research scope &amp; validation</b><ul>"""
         + blockers
         + """</ul></aside>
-<label for="search">Find a source, commodity or unit</label><br><input id="search"
+<label for="search">Find a source, commodity or unit</label><input id="search"
 placeholder="Try Copper, weekly or USD/bbl" type="search"><div class="scroll">
 <table><thead><tr>"""
         + headers
         + "</tr></thead><tbody>"
         + "".join(cells)
         + """</tbody></table>
-</div><p>Monthly benchmarks, spot prices, positioning and historical futures ranks
+</div><p class="footnote">Monthly benchmarks, spot prices, positioning and historical futures ranks
 are distinct datasets. Retrieval timestamps do not establish original publication time.</p>
 </main><script>document.querySelector('#search').addEventListener('input', e => {
 const q=e.target.value.toLowerCase(); document.querySelectorAll('tbody tr').forEach(

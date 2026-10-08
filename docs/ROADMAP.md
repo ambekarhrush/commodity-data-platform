@@ -1,11 +1,10 @@
 # Building the portfolio one project at a time
 
-The screenshots are the target scope, not proof that every suggested data feed
-contains the required history. We will release small verified pieces, document
-what is real versus synthetic, and only make research claims supported by the data.
-The original October 2025 starting date is past; work starts in October 2026.
-At eight hours per week, use the milestones below rather than promise dates before
-source access is verified.
+Five complementary projects connect commodity data engineering, risk management
+and investment research. Each stage has explicit acceptance criteria; subsequent
+projects build on verified capabilities in the shared platform.
+
+[Project overview](../README.md) · [Current validation status](COMPLETION.md)
 
 ## Project 1 — shared data platform (current, release 0.2)
 
@@ -18,13 +17,13 @@ The roll engine supports calendar/business timing and first-notice constraints.
 Official settlement history and an exchange calendar remain outstanding.
 
 A searchable catalogue, checksummed backup/restore and two-page note are available.
-Daily workflow files exist but are inactive. The initial eight-hours-per-week plan
-must account for provider access and operational verification before moving to risk.
+The daily workflow is configured on GitHub; hosted execution and recovery remain
+to be verified before the operations milestone can be considered complete.
 
 See [the detailed completion gates](COMPLETION.md):
 
 1. Official individual-contract settlement history and verified exchange calendar.
-2. GitHub activation, off-device backup and verified scheduled/failure recovery runs.
+2. Off-device backup and verified scheduled/failure recovery runs.
 
 EIA NYMEX rank prices stop after April 5, 2024; the original assumption that EIA
 could supply current futures curves was incorrect. No results from the other
