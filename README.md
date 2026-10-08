@@ -199,10 +199,11 @@ exports the catalogue and uploads the archive even when a refresh fails.
 The repository is public at `ambekarhrush/commodity-data-platform`; GitHub Actions
 can now run CI and the scheduled workflow. Configure `AGSI_API_KEY` as a repository
 secret before enabling authenticated AGSI refreshes, then verify one manual run and
-its uploaded artifact. Schedules are best effort. Artifacts expire after 90 days: a
-continuing daily chain carries older vintages forward, but a long outage can lose the
-archive. Durable off-device backup and a verified hosted run are still required for
-completion.
+its uploaded artifact. After each successful daily run, GitHub Actions updates
+`docs/RUN_STATUS.md` with source status and row counts; it contains no raw vendor
+data. Schedules are best effort. Artifacts expire after 90 days: a continuing daily
+chain carries older vintages forward, but a long outage can lose the archive. Durable
+off-device backup and a verified hosted run are still required for completion.
 
 ## Verification and project note
 

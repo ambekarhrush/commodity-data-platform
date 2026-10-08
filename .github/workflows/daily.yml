@@ -4,7 +4,7 @@ on:
     - cron: '25 18 * * *'
   workflow_dispatch:
 permissions:
-  contents: read
+  contents: write
   actions: read
 concurrency:
   group: commodity-data-ingestion
@@ -38,6 +38,42 @@ jobs:
       - name: Export catalogue
         if: ${{ !cancelled() }}
         run: uv run commodity-data export-catalog data/catalog.html
+      - name: Write public refresh status
+        if: ${{ success() }}
+        run: |
+          uv run python - <<'PY'
+          import json
+          from pathlib import Path
+
+          report = json.loads(Path("data/health.json").read_text())
+          lines = [
+              "# Automated refresh status",
+              "",
+              "This file is updated by the daily GitHub Actions refresh. It contains no raw market data or credentials.",
+              "",
+              f"Last successful refresh: `{report['generated_at']}`",
+              "",
+              "| Source | Status | Rows | New review alerts |",
+              "| --- | --- | ---: | ---: |",
+          ]
+          for source in report["sources"]:
+              lines.append(
+                  f"| {source['source']} | {source['status']} | {source['rows']:,} | {source['new_alerts']} |"
+              )
+          blockers = report["completion_blockers"]
+          if blockers:
+              lines += ["", "## Remaining completion gates", ""]
+              lines += [f"- {item}" for item in blockers]
+          Path("docs/RUN_STATUS.md").write_text("\n".join(lines) + "\n")
+          PY
+      - name: Commit refresh status
+        if: ${{ success() }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/RUN_STATUS.md
+          git diff --cached --quiet || git commit -m "chore: daily data refresh status"
+          git push
       - name: Preserve history and reports even when checks fail
         if: ${{ !cancelled() }}
         uses: actions/upload-artifact@v4
