@@ -225,6 +225,10 @@ Keep local analysis distinct from redistribution; provider terms still apply.
 Read [completion gates](docs/COMPLETION.md), [portfolio roadmap](docs/ROADMAP.md)
 and [the introductory walkthrough](docs/WALKTHROUGH.md).
 
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for local setup, validation and data-handling rules.
+
 ## Primary sources
 
 - [World Bank commodity markets](https://www.worldbank.org/en/research/commodity-markets)
