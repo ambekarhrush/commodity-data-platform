@@ -2,7 +2,7 @@
 
 This file is updated by the daily GitHub Actions refresh. It contains no raw market data or credentials.
 
-Last successful refresh: `2026-10-07T18:59:34.555145+00:00`
+Last successful refresh: `2026-10-08T12:49:21.309334+00:00`
 
 | Source | Status | Rows | New review alerts |
 | --- | --- | ---: | ---: |
@@ -10,13 +10,12 @@ Last successful refresh: `2026-10-07T18:59:34.555145+00:00`
 | eia-public | ok | 60,924 | 0 |
 | westmetall | ok | 30,748 | 0 |
 | cftc | ok | 34,980 | 0 |
-| agsi | not_connected | 0 | 0 |
-| usda | not_connected | 0 | 0 |
+| agsi | ok | 12,355 | 2 |
+| usda-wasde | ok | 35,194 | 0 |
+| yahoo-futures | ok | 192 | 0 |
 | derived | ok | 37,747 | 0 |
 
 ## Remaining completion gates
 
-- AGSI requires a successful authenticated live run
-- USDA WASDE download returned HTTP 403; adapter is not implemented
-- Live individual-contract settlements and exchange calendar still required
+- Official exchange settlement feed still required; live dated WTI closes and FND/LTD metadata are available
 - GitHub remote, scheduled execution and off-device backup not activated
