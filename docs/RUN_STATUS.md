@@ -2,18 +2,18 @@
 
 This file is updated by the daily GitHub Actions refresh. It contains no raw market data or credentials.
 
-Last successful refresh: `2026-10-08T23:29:54.117638+00:00`
+Last successful refresh: `2026-10-09T22:47:38.660528+00:00`
 
 | Source | Status | Rows | New review alerts |
 | --- | --- | ---: | ---: |
-| worldbank | ok | 50,451 | 43 |
-| eia-public | ok | 60,924 | 10 |
-| westmetall | ok | 30,766 | 4 |
-| cftc | ok | 34,980 | 18 |
+| worldbank | ok | 50,451 | 0 |
+| eia-public | ok | 60,924 | 0 |
+| westmetall | ok | 30,784 | 0 |
+| cftc | ok | 35,013 | 0 |
 | agsi | not_connected | 0 | 0 |
 | usda-wasde | not_connected | 0 | 0 |
-| yahoo-futures | ok | 193 | 0 |
-| derived | ok | 37,759 | 18 |
+| yahoo-futures | ok | 194 | 0 |
+| derived | ok | 37,771 | 2 |
 
 ## Remaining completion gates
 
