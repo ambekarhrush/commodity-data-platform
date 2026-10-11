@@ -2,7 +2,7 @@
 
 This file is updated by the daily GitHub Actions refresh. It contains no raw market data or credentials.
 
-Last successful refresh: `2026-10-10T21:55:24.275076+00:00`
+Last successful refresh: `2026-10-11T22:13:17.851228+00:00`
 
 | Source | Status | Rows | New review alerts |
 | --- | --- | ---: | ---: |
@@ -12,8 +12,8 @@ Last successful refresh: `2026-10-10T21:55:24.275076+00:00`
 | cftc | ok | 35,013 | 0 |
 | agsi | not_connected | 0 | 0 |
 | usda-wasde | not_connected | 0 | 0 |
-| yahoo-futures | ok | 194 | 0 |
-| derived | ok | 37,783 | 4 |
+| yahoo-futures | ok | 195 | 0 |
+| derived | ok | 37,783 | 0 |
 
 ## Remaining completion gates
 
