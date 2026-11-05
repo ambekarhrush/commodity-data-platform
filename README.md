@@ -15,6 +15,8 @@
   <a href="docs/COMPLETION.md">Validation status</a>
 </p>
 
+[Project one-pager (PDF)](docs/project-brief.pdf) · [Editable brief](docs/project-brief.md)
+
 ## Why this project
 
 Commodity research starts with a deceptively difficult task: making prices,
